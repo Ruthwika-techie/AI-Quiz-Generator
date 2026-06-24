@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What is the primary function of a PowerPoint presentation?",
+    "options": [
+      "To create complex databases",
+      "To visually communicate information and ideas",
+      "To edit video files",
+      "To write computer programs"
+    ],
+    "correct_answer": "B",
+    "explanation": "PowerPoint is designed for creating visual presentations to communicate information effectively. It is a presentation software, not a database, video editor, or programming tool."
+  },
+  {
+    "question": "Which of the following is NOT a standard PowerPoint view?",
+    "options": [
+      "Normal view",
+      "Slide Sorter view",
+      "Database view",
+      "Slide Show view"
+    ],
+    "correct_answer": "C",
+    "explanation": "Database view is not a standard PowerPoint view. The standard views include Normal, Slide Sorter, Reading View, and Slide Show view."
+  },
+  {
+    "question": "What does AI stand for in the context of modern technology?",
+    "options": [
+      "Automated Integration",
+      "Artificial Intelligence",
+      "Advanced Interface",
+      "Algorithmic Input"
+    ],
+    "correct_answer": "B",
+    "explanation": "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence processes by computer systems."
+  },
+  {
+    "question": "What is the purpose of slide transitions in PowerPoint?",
+    "options": [
+      "To change the font style",
+      "To add animation effects between slides",
+      "To insert images into slides",
+      "To save the presentation file"
+    ],
+    "correct_answer": "B",
+    "explanation": "Slide transitions are visual effects that occur when moving from one slide to the next during a slideshow presentation."
+  },
+  {
+    "question": "Which file extension is used for modern PowerPoint presentations?",
+    "options": [
+      ".docx",
+      ".xlsx",
+      ".pptx",
+      ".pdf"
+    ],
+    "correct_answer": "C",
+    "explanation": "The .pptx extension is the standard XML-based file format for PowerPoint presentations introduced in Office 2007."
+  },
+  {
+    "question": "What is a key benefit of using AI for quiz generation?",
+    "options": [
+      "It eliminates the need for any content",
+      "It can automatically generate relevant questions from provided content",
+      "It always produces perfect questions without review",
+      "It replaces the need for human learning"
+    ],
+    "correct_answer": "B",
+    "explanation": "AI can analyze provided content and automatically generate relevant, contextually appropriate questions, saving time and ensuring coverage of key concepts."
+  },
+  {
+    "question": "In the context of quiz design, what makes a good distractor?",
+    "options": [
+      "An obviously wrong answer",
+      "A plausible but incorrect answer",
+      "A humorous answer",
+      "A very long answer"
+    ],
+    "correct_answer": "B",
+    "explanation": "Good distractors are plausible incorrect answers that test whether the student truly understands the material, not obviously wrong choices."
+  },
+  {
+    "question": "What is the recommended approach for displaying quiz questions in a web application?",
+    "options": [
+      "Show all questions at once",
+      "Display one question at a time with navigation",
+      "Show questions in random order only",
+      "Display questions without any options"
+    ],
+    "correct_answer": "B",
+    "explanation": "Displaying one question at a time with navigation reduces cognitive load and allows users to focus on each question individually."
+  },
+  {
+    "question": "What type of chart is most effective for showing score distribution in a quiz?",
+    "options": [
+      "Line chart",
+      "Pie chart or donut chart",
+      "Scatter plot",
+      "Area chart"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pie charts and donut charts are effective for showing proportional distribution of categorical data like correct vs incorrect answers."
+  },
+  {
+    "question": "What is the purpose of providing explanations after quiz answers?",
+    "options": [
+      "To make the quiz longer",
+      "To enhance learning by explaining why an answer is correct",
+      "To confuse the students",
+      "To show off the AI capabilities"
+    ],
+    "correct_answer": "B",
+    "explanation": "Explanations help reinforce learning by providing context and reasoning for correct answers, turning the quiz into a learning opportunity."
+  }
+]

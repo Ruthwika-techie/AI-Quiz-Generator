@@ -1,0 +1,394 @@
+/* ============================================
+   AI QUIZ GENERATOR - PREMIUM LAYOUT + TRANSITIONS
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-deep: #020617;
+  --cyan: #00E5FF;
+  --magenta: #FF2E9A;
+  --indigo: #4F46E5;
+  --gold: #FFD166;
+  --success: #10B981;
+  --danger: #EF4444;
+  --text: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== BASE + SMOOTH TRANSITIONS ========== */
+html, body, .stApp {
+  background: var(--bg-deep) !important;
+  font-family: 'Inter', sans-serif !important;
+  color: var(--text) !important;
+}
+
+/* Smooth page entrance */
+.stApp > div {
+  animation: pageFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Smooth block entrance */
+div[data-testid="stVerticalBlock"] > div {
+  animation: blockFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes blockFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif !important;
+  color: var(--text) !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Hide Streamlit Bloat */
+#MainMenu, footer, header, .stAppDeployButton, .stAppToolbar,
+div[data-testid="stToolbar"], div[data-testid="stDecoration"],
+div[data-testid="stStatusWidget"] { display: none !important; }
+
+/* ========== SPACING IMPROVEMENTS ========== */
+.block-container {
+  padding: 2rem 3rem !important;
+  max-width: 1200px !important;
+}
+
+/* Consistent section spacing */
+section[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] > div {
+  margin-bottom: 0.5rem !important;
+}
+
+/* ========== HERO ========== */
+.hero-section {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.hero-title {
+  font-family: 'Sora', sans-serif !important;
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.8rem !important;
+  background: linear-gradient(135deg, #00E5FF, #4F46E5, #FF2E9A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  max-width: 600px;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ========== CARDS ========== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1.5rem !important;
+  transition: var(--transition-smooth) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 229, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ========== FEATURE GRID ========== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1.8rem 1.2rem !important;
+  text-align: center !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(0, 229, 255, 0.2) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.feature-icon { font-size: 2.5rem !important; margin-bottom: 0.8rem !important; display: block !important; }
+.feature-title { font-family: 'Sora', sans-serif !important; font-weight: 700 !important; margin-bottom: 0.5rem !important; color: white !important; }
+.feature-desc { font-size: 0.85rem !important; color: var(--text-secondary) !important; line-height: 1.6 !important; }
+
+/* ========== BUTTONS ========== */
+.stButton > button {
+  background: linear-gradient(135deg, #00E5FF, #4F46E5, #FF2E9A) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 0.7rem 1.5rem !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  transition: var(--transition-fast) !important;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.25) !important;
+  transform: translateY(0) !important;
+}
+
+.stButton > button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(0, 229, 255, 0.4) !important;
+}
+
+/* Secondary button */
+.stButton > button[kind="secondary"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+.stButton > button[kind="secondary"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 229, 255, 0.3) !important;
+}
+
+/* Generate button */
+.generate-btn .stButton > button {
+  font-size: 1.2rem !important;
+  padding: 1rem 2.5rem !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: 0 8px 40px rgba(0, 229, 255, 0.35) !important;
+  animation: generatePulse 3s ease-in-out infinite !important;
+}
+
+@keyframes generatePulse {
+  0%, 100% { box-shadow: 0 8px 40px rgba(0, 229, 255, 0.35); }
+  50% { box-shadow: 0 12px 60px rgba(0, 229, 255, 0.5); }
+}
+
+.generate-btn .stButton > button:hover {
+  transform: scale(1.03) translateY(-3px) !important;
+  box-shadow: 0 12px 60px rgba(0, 229, 255, 0.5) !important;
+}
+
+/* ========== TIMER (FIXED OVERLAP) ========== */
+.timer-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 10px !important;
+  background: rgba(0, 229, 255, 0.06) !important;
+  border: 1px solid rgba(0, 229, 255, 0.15) !important;
+  width: fit-content !important;
+  min-width: 80px !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+}
+
+.timer-text {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #00E5FF !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.timer-warning {
+  border-color: rgba(255, 209, 102, 0.3) !important;
+  background: rgba(255, 209, 102, 0.06) !important;
+}
+.timer-warning .timer-text { color: #FFD166 !important; }
+
+.timer-critical {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+  background: rgba(239, 68, 68, 0.06) !important;
+}
+.timer-critical .timer-text { color: #EF4444 !important; animation: blink 0.5s ease-in-out infinite; }
+
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* ========== CONFIG PAGE FIX ========== */
+/* Fix inner spacing for config columns */
+div[data-testid="column"] {
+  padding: 0 0.5rem !important;
+}
+
+div[data-testid="column"] > div {
+  gap: 0.3rem !important;
+}
+
+/* Radio buttons in config - compact */
+div[data-testid="stRadio"] {
+  gap: 0.2rem !important;
+}
+
+div[data-testid="stRadio"] label {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 10px !important;
+  padding: 0.5rem 1rem !important;
+  transition: var(--transition-fast) !important;
+  font-size: 0.9rem !important;
+}
+
+div[data-testid="stRadio"] label:hover {
+  background: rgba(0, 229, 255, 0.06) !important;
+  border-color: rgba(0, 229, 255, 0.2) !important;
+}
+
+div[data-testid="stRadio"] label[data-selected="true"] {
+  background: rgba(0, 229, 255, 0.1) !important;
+  border-color: #00E5FF !important;
+  box-shadow: 0 0 20px rgba(0,229,255,0.1) !important;
+}
+
+/* Info box fix */
+div[data-testid="stInfoBox"] {
+  padding: 0.5rem 0.8rem !important;
+  margin-top: 0.3rem !important;
+  font-size: 0.85rem !important;
+}
+
+/* ========== PROGRESS BAR ========== */
+.stProgress { height: 5px !important; border-radius: 3px !important; background: rgba(255,255,255,0.06) !important; }
+.stProgress > div > div > div > div {
+  background: linear-gradient(90deg, #00E5FF, #4F46E5, #FF2E9A) !important;
+  border-radius: 3px !important;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ========== UPLOADER ========== */
+div[data-testid="stFileUploader"] > section {
+  background: rgba(0, 229, 255, 0.03) !important;
+  border: 1.5px dashed rgba(0, 229, 255, 0.3) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 2rem !important;
+  transition: var(--transition-smooth) !important;
+}
+div[data-testid="stFileUploader"] > section:hover {
+  border-color: #00E5FF !important;
+  background: rgba(0, 229, 255, 0.06) !important;
+  box-shadow: 0 0 40px rgba(0,229,255,0.08) !important;
+}
+
+/* ========== QUESTION CARD ========== */
+.question-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 229, 255, 0.15) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 1.8rem !important;
+  margin: 1rem 0 !important;
+  transition: var(--transition-smooth) !important;
+}
+.question-text { font-size: 1.15rem !important; font-weight: 600 !important; color: white !important; line-height: 1.6 !important; }
+
+/* ========== SCORE CIRCLE ========== */
+.score-circle {
+  width: 180px; height: 180px; border-radius: 50%; position: relative; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+}
+.score-circle::before {
+  content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%;
+  background: conic-gradient(var(--score-color, #00E5FF) var(--percentage), rgba(255,255,255,0.05) 0%);
+  box-shadow: 0 0 30px var(--score-glow, rgba(0, 229, 255, 0.2));
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.score-circle-inner {
+  width: 140px; height: 140px; border-radius: 50%; background: #020617;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  z-index: 1; border: 1px solid rgba(255,255,255,0.05);
+}
+.score-number { font-size: 3rem; font-weight: 800; color: white; line-height: 1; font-family: 'Sora', sans-serif; }
+.score-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+
+.score-outstanding { --score-color: #FFD166; --score-glow: rgba(255, 209, 102, 0.3); }
+.score-excellent { --score-color: #00E5FF; --score-glow: rgba(0, 229, 255, 0.25); }
+.score-good { --score-color: #FFD166; --score-glow: rgba(255, 209, 102, 0.2); }
+.score-needs-improvement { --score-color: #EF4444; --score-glow: rgba(239, 68, 68, 0.2); }
+
+/* ========== BADGES ========== */
+.badge { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.7rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; transition: var(--transition-fast); }
+.badge-success { background: rgba(16, 185, 129, 0.12); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.25); }
+.badge-danger { background: rgba(239, 68, 68, 0.12); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.25); }
+
+/* ========== STREAMLIT OVERRIDES ========== */
+div[data-testid="stMetricValue"] { color: white !important; font-size: 1.8rem !important; font-weight: 800 !important; }
+div[data-testid="stMetricLabel"] { color: var(--text-secondary) !important; font-size: 0.8rem !important; }
+
+section[data-testid="stSidebar"] { background: rgba(2,6,23,0.98) !important; border-right: 1px solid rgba(255,255,255,0.06) !important; }
+
+div[data-testid="stExpander"] { background: rgba(255,255,255,0.03) !important; border: 1px solid rgba(255,255,255,0.08) !important; border-radius: var(--radius-md) !important; transition: var(--transition-fast); }
+div[data-testid="stExpander"] > div:first-child:hover { background: rgba(255,255,255,0.03) !important; }
+
+div[data-testid="stSuccessBox"] { background: rgba(16, 185, 129, 0.08) !important; border: 1px solid rgba(16, 185, 129, 0.2) !important; border-radius: var(--radius-md) !important; }
+div[data-testid="stErrorBox"] { background: rgba(239, 68, 68, 0.08) !important; border: 1px solid rgba(239, 68, 68, 0.2) !important; border-radius: var(--radius-md) !important; }
+
+input, textarea { background: rgba(255,255,255,0.04) !important; border: 1px solid rgba(255,255,255,0.1) !important; border-radius: var(--radius-md) !important; color: var(--text) !important; transition: var(--transition-fast); }
+input:focus, textarea:focus { border-color: var(--cyan) !important; box-shadow: 0 0 20px rgba(0,229,255,0.1) !important; }
+
+div[data-testid="stSelectbox"] > div > div { background: rgba(255,255,255,0.04) !important; border: 1px solid rgba(255,255,255,0.1) !important; border-radius: var(--radius-md) !important; color: var(--text) !important; }
+
+/* ========== DIVIDER ========== */
+.premium-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,229,255,0.3), rgba(79,70,229,0.3), rgba(255,46,154,0.3), transparent) !important; margin: 1rem 0; border: none; }
+
+/* ========== CONFETTI ========== */
+@keyframes confettiFall { 0% { transform: translateY(-20vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(120vh) rotate(720deg); opacity: 0; } }
+.confetti-piece { position: fixed; width: 8px; height: 8px; top: -10px; z-index: 9999; animation: confettiFall 3s ease-in-out forwards; pointer-events: none; }
+
+/* ========== PARTICLES ========== */
+@keyframes particleFloat { 0% { transform: translateY(100vh); opacity: 0; } 10% { opacity: 0.4; } 90% { opacity: 0.4; } 100% { transform: translateY(-100vh); opacity: 0; } }
+.particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.particle { position: absolute; border-radius: 50%; animation: particleFloat 20s infinite linear; }
+
+/* ========== PROCESSING ========== */
+@keyframes holoSpin { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+.holo-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(0,229,255,0.15); top: 50%; left: 50%; animation: holoSpin 3s linear infinite; pointer-events: none; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .block-container { padding: 1.5rem 2rem !important; }
+}
+
+@media (max-width: 768px) {
+  .block-container { padding: 1rem 1.2rem !important; }
+  .hero-title { font-size: 2rem !important; }
+  .hero-subtitle { font-size: 1rem !important; }
+  .feature-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+  .score-circle { width: 150px; height: 150px; }
+  .score-circle-inner { width: 115px; height: 115px; }
+  .score-number { font-size: 2.2rem; }
+  div[data-testid="column"] { padding: 0 !important; }
+}
+
+@media (max-width: 480px) {
+  .block-container { padding: 0.8rem 0.8rem !important; }
+  .hero-title { font-size: 1.6rem !important; }
+  .glass-card { padding: 1rem !important; }
+}
